@@ -1,0 +1,7 @@
+# npm + bower
+node_modules/
+public/bower_components
+
+# Games
+games/*
+!games/.gitkeep

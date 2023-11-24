@@ -146,11 +146,12 @@ angular.module('myApp.controllers').
     // But we assume this game runs in a safe and self-controlled
     // environment.
     // Means: Not intended for internet production traffic.
-    var wsURL = "ws://" + window.location.hostname + ":8080/stream"
-    console.log("Connecting to Jeopardy game websocket server " + wsURL);
-    connectToWebSocket(wsURL);
+    // var wsURL = "ws://" + window.location.hostname + ":8080/stream"
+    // console.log("Connecting to Jeopardy game websocket server " + wsURL);
+    // connectToWebSocket(wsURL);
   });
 
+/*
 var lastHit = 0;
 var currentTime;
 
@@ -195,3 +196,4 @@ function connectToWebSocket(websocketServerLocation){
     }, 5000);
   }
 }
+*/

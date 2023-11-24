@@ -24,7 +24,7 @@ function exportRawAPIResponse (req, res, next) {
 }
 
 // Get Seasons list
-exports.seasons = async function (req, res, next) {
+exports.seasons = function (req, res, next) {
     request('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons', exportRawAPIResponse(req, res, next));
     // try {
     //     const response = await got('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons', exportRawAPIResponse(req, res, next));
@@ -34,7 +34,7 @@ exports.seasons = async function (req, res, next) {
 }
 
 // Get Season
-exports.season = async function (req, res, next) {
+exports.season = function (req, res, next) {
     request('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons/' + req.params.id, exportRawAPIResponse(req, res, next));
     // try {
     //     const response = await got('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons/' + req.params.id, exportRawAPIResponse(req, res, next));
@@ -44,7 +44,7 @@ exports.season = async function (req, res, next) {
 }
 
 // Get Game
-exports.game = async function (req, res, next) {
+exports.game = function (req, res, next) {
     request('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/games/' + req.params.id, exportRawAPIResponse(req, res, next));
     // try {
     //     const response = await got('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/games/' + req.params.id, exportRawAPIResponse(req, res, next));

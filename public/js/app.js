@@ -11,7 +11,7 @@ angular.module('myApp', [
     'ui.bootstrap',
     'ui.router'
 ]).config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/seasons");
+    $urlRouterProvider.otherwise("/board");
 
     $stateProvider.
       state('seasons', {
@@ -54,11 +54,16 @@ angular.module('myApp', [
     $sceDelegateProvider.resourceUrlWhitelist([
       // Allow same origin resource loads.
       'self',
+      // Load server info
+      'https://jeopardyserver.crimsonorion.com/**',
+      // Get video info from youtube
+      'http://*.youtube.com/**'
+
       // Allow loading from every asset domain.
       // This is not secure and far from perfect, but
       // we assume this application runs in a safe
       // and self-controlled environment.
       // Means: Not used for production internet traffic.
-      '**',
+      //'**',
     ])
   });

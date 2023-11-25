@@ -18,6 +18,7 @@ angular.module('myApp.controllers').
       var width = 4;
       var buffer = "";
 
+      // Check to see if there are players 4 and 5 there and process accordingly
       if($scope.game.player_4 && $scope.game.player_4.name) {
         count = 4;
         width = 3;

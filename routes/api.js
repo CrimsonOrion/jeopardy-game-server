@@ -6,7 +6,7 @@
 var request = require('request');
 var _ = require('lodash');
 
-process.env.TWB_QUESTION_SERVER = 'jeopardyserver.crimsonorion.com';
+process.env.RESOURCE_SERVER = 'jeopardyserver.crimsonorion.com';
 
 /**
  * Export the raw API response from our own Jeopardy! Question Server here.
@@ -25,9 +25,9 @@ function exportRawAPIResponse (req, res, next) {
 
 // Get Seasons list
 exports.seasons = function (req, res, next) {
-    request('https://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons', exportRawAPIResponse(req, res, next));
+    request('https://' + process.env.RESOURCE_SERVER + '/game-content/seasons', exportRawAPIResponse(req, res, next));
     // try {
-    //     const response = await got('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons', exportRawAPIResponse(req, res, next));
+    //     const response = await got('http://' + process.env.RESOURCE_SERVER + '/game-content/seasons', exportRawAPIResponse(req, res, next));
     // } catch (error) {
     //     console.log('error:', error);
     // }
@@ -35,9 +35,9 @@ exports.seasons = function (req, res, next) {
 
 // Get Season
 exports.season = function (req, res, next) {
-    request('https://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons/' + req.params.id, exportRawAPIResponse(req, res, next));
+    request('https://' + process.env.RESOURCE_SERVER + '/game-content/seasons/' + req.params.id, exportRawAPIResponse(req, res, next));
     // try {
-    //     const response = await got('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/seasons/' + req.params.id, exportRawAPIResponse(req, res, next));
+    //     const response = await got('http://' + process.env.RESOURCE_SERVER + '/game-content/seasons/' + req.params.id, exportRawAPIResponse(req, res, next));
     // } catch (error) {
     //     console.log('error:', error);
     // }
@@ -45,9 +45,9 @@ exports.season = function (req, res, next) {
 
 // Get Game
 exports.game = function (req, res, next) {
-    request('https://' + process.env.TWB_QUESTION_SERVER + '/game-content/games/' + req.params.id, exportRawAPIResponse(req, res, next));
+    request('https://' + process.env.RESOURCE_SERVER + '/game-content/games/' + req.params.id, exportRawAPIResponse(req, res, next));
     // try {
-    //     const response = await got('http://' + process.env.TWB_QUESTION_SERVER + '/game-content/games/' + req.params.id, exportRawAPIResponse(req, res, next));
+    //     const response = await got('http://' + process.env.RESOURCE_SERVER + '/game-content/games/' + req.params.id, exportRawAPIResponse(req, res, next));
     // } catch (error) {
     //     console.log('error:', error);
     // }

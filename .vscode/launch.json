@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "Run Script: test",
+            "request": "launch",
+            "command": "$env:RESOURCE_SERVER='jeopardyserver.crimsonorion.com'; node app.js",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

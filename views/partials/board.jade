@@ -1,5 +1,20 @@
+div(ng-if='game.round != "J" && game.round != "DJ" && game.round != "FJ" && game.round != "end"')
+    h2 Test your sound here and adjust your speakers as needed.
+    br
+    br
+    h3 Audio clues
+    audio(controls='')
+      source(ng-src='https://jeopardyserver.crimsonorion.com/game-content/audio/crystaltheme.mp3', type='audio/mpeg')
+    br
+    h3 Video clues
+    video(width='800', height='600', controls='')
+      source(src='https://jeopardyserver.crimsonorion.com/game-content/video/peek-a-boo.mp4', type='video/mp4')
+    br
+    h3 External affects
+    iframe(title="final-jeopardy-theme", width="800", height="600", src="https://www.youtube.com/embed/BO_FIDcm2fE?autoplay=0&rel=0", frameboarder=0 )
+
 each k in ['J', 'DJ']
-    .container-fluid.jeopardy-board(ng-show='game.round == "#{k}"')
+    .container-fluid.jeopardy-board(ng-if='game.round == "#{k}"', ng-show='game.round == "#{k}"')
         div.board-player-scores(ng-bind-html='scoreHtmlTop')
         .row.board-row.category-row
             each i in [1, 2, 3, 4, 5, 6]
@@ -10,10 +25,8 @@ each k in ['J', 'DJ']
                 each i in [1, 2, 3, 4, 5, 6]
                     .col-md-2.text-center.board-cell.clue-cell
                         div(ng-show='data.clue_#{k}_#{i}_#{j} && !game.clue_#{k}_#{i}_#{j}') $#{j * (k == 'J' ? 200 : 400)}
-.container-fluid.jeopardy-board(ng-show='game.round == "FJ" || game.round == "end"')
+.container-fluid.jeopardy-board(ng-if='game.round == "FJ" || game.round == "end"', ng-show='game.round == "FJ" || game.round == "end"')
     .row.fj-row
         .col-md-12.text-center.board-cell.fj-cell
             div {{data.category_FJ_1.category_name}}
                 div(ng-bind-html='scoreHtml')
-
-div(id="button-hit")

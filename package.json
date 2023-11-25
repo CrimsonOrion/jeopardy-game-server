@@ -4,7 +4,7 @@
   "description": "Jeopardy! game server",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "$env:RESOURCE_SERVER='jeopardyserver.crimsonorion.com'; node app.js"
   },
   "repository": {
     "type": "git",

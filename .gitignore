@@ -2,6 +2,13 @@
 node_modules/
 public/bower_components
 
+# Environment
+.env
+
 # Games
 games/*
 !games/.gitkeep
+
+# Media
+*.mp3
+*.mp4

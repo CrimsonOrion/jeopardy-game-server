@@ -13,16 +13,16 @@
       .col-md-4.text-center
         h4 {{ game.player_#{i}.name || 'Player #{i}' }}
         .btn-group
-          button.btn.btn-lg(ng-click='setResult(#{i}, false)', ng-class="{'btn-default':!result.player_#{i}.wrong, 'btn-danger':result.player_#{i}.wrong}")
+          button.btn.btn-lg(ng-click=`setResult(${i}, false)`, ng-class=`{'btn-default':!result.player_${i}.wrong, 'btn-danger':result.player_${i}.wrong}`)
             span.glyphicon.glyphicon-remove
-          button.btn.btn-lg(ng-click='setResult(#{i}, true)', ng-class="{'btn-default':!result.player_#{i}.right, 'btn-success':result.player_#{i}.right}")
+          button.btn.btn-lg(ng-click=`setResult(${i}, true)`, ng-class=`{'btn-default':!result.player_${i}.right, 'btn-success':result.player_${i}.right}`)
             span.glyphicon.glyphicon-ok
 
   .row(ng-if='clue.daily_double')
     .col-md-4.text-right
       .btn-group
         each i in [1, 2, 3, 4, 5]
-          label.btn.btn-primary(ng-model='result.dd_player', btn-radio="'player_#{i}'", ng-disabled='result.dd_confirm') {{ game.player_#{i}.name || 'Player #{i}' }}
+          label.btn.btn-primary(ng-model='result.dd_player', btn-radio=`'player_${i}'`, ng-disabled='result.dd_confirm') {{ game.player_#{i}.name || 'Player #{i}' }}
     .col-md-4
       .input-group
         span.input-group-addon $

@@ -15,7 +15,7 @@ angular.module('myApp', [
 
     $stateProvider.
       state('seasons', {
-        url: '/seasons',
+        url: '/admin',
         templateUrl: 'partials/seasons',
         controller: 'SeasonsCtrl',
         resolve: {

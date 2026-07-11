@@ -13,6 +13,7 @@ var express = require('express'),
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
+var basicAuth = require('express-basic-auth');
 
 var app = module.exports = express();
 var server = http.createServer(app);
@@ -47,6 +48,10 @@ app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 // json API
+app.use('/api', basicAuth({
+    users: { [process.env.AUTH_USER]: process.env.AUTH_PASS },
+    challenge: true
+}));
 app.get('/api/seasons', api.seasons);
 app.get('/api/seasons/:id', api.season);
 app.get('/api/games/:id', api.game);

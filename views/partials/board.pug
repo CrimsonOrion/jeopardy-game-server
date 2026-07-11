@@ -14,7 +14,7 @@ div(ng-if='game.round != "J" && game.round != "DJ" && game.round != "FJ" && game
     iframe(title="final-jeopardy-theme", width="800", height="600", src="https://www.youtube.com/embed/BO_FIDcm2fE?autoplay=0&rel=0", frameboarder=0 )
 
 each k in ['J', 'DJ']
-    .container-fluid.jeopardy-board(ng-if='game.round == "#{k}"', ng-show='game.round == "#{k}"')
+    .container-fluid.jeopardy-board(ng-if=`game.round == "${k}"`, ng-show=`game.round == "${k}"`)
         div.board-player-scores(ng-bind-html='scoreHtmlTop')
         .row.board-row.category-row
             each i in [1, 2, 3, 4, 5, 6]
@@ -24,7 +24,7 @@ each k in ['J', 'DJ']
             .row.board-row
                 each i in [1, 2, 3, 4, 5, 6]
                     .col-md-2.text-center.board-cell.clue-cell
-                        div(ng-show='data.clue_#{k}_#{i}_#{j} && !game.clue_#{k}_#{i}_#{j}') $#{j * (k == 'J' ? 200 : 400)}
+                        div(ng-show=`data.clue_${k}_${i}_${j} && !game.clue_${k}_${i}_${j}`) $#{j * (k == 'J' ? 200 : 400)}
 .container-fluid.jeopardy-board(ng-if='game.round == "FJ" || game.round == "end"', ng-show='game.round == "FJ" || game.round == "end"')
     .row.fj-row
         .col-md-12.text-center.board-cell.fj-cell

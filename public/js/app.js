@@ -55,7 +55,7 @@ angular.module('myApp', [
       // Allow same origin resource loads.
       'self',
       // Load server info
-      //'https://jeopardyserver.crimsonorion.com/**',
+      'https://jeopardyserver.crimsonorion.com/**',
       // Get video info from youtube
       'http://*.youtube.com/**',
 
@@ -64,6 +64,6 @@ angular.module('myApp', [
       // we assume this application runs in a safe
       // and self-controlled environment.
       // Means: Not used for production internet traffic.
-      '**',
+      //'**',
     ])
   });

@@ -57,6 +57,7 @@ angular.module('myApp', [
       'self',
       // Load server info
       'https://jeopardyserver.crimsonorion.com/**',
+      'http://localhost:3001/**',
       // Get video info from youtube
       'http://*.youtube.com/**',
 

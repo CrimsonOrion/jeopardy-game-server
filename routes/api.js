@@ -23,15 +23,15 @@ async function fetchAndForward (url, res, next) {
 
 // Get Seasons list
 exports.seasons = function (req, res, next) {
-    fetchAndForward('http://' + RESOURCE_SERVER + '/game-content/seasons', res, next);
+    return fetchAndForward('http://' + RESOURCE_SERVER + '/game-content/seasons', res, next);
 }
 
 // Get Season
 exports.season = function (req, res, next) {
-    fetchAndForward('http://' + RESOURCE_SERVER + '/game-content/seasons/' + req.params.id, res, next);
+    return fetchAndForward('http://' + RESOURCE_SERVER + '/game-content/seasons/' + req.params.id, res, next);
 }
 
 // Get Game
 exports.game = function (req, res, next) {
-    fetchAndForward('http://' + RESOURCE_SERVER + '/game-content/games/' + req.params.id, res, next);
+    return fetchAndForward('http://' + RESOURCE_SERVER + '/game-content/games/' + req.params.id, res, next);
 }

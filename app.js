@@ -66,8 +66,6 @@ io.sockets.on('connection', require('./routes/socket')(io));
     Start Server
 */
 
-if (require.main === module) {
-    server.listen(app.get('port'), function () {
-        console.log('Express server listening on port ' + app.get('port'));
-    });
-}
+server.listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + app.get('port'));
+});
